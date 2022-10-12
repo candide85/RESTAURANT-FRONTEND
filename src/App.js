@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'antd/dist/antd.css'
+import {Route, Routes, BrowserRouter} from 'react-router-dom'
+import Home from './pages/Home'
+import ItemsPage from './pages/ItemsPage'
+import CartPage from './pages/CartPage'
+
+
+// import 'bootstrap/dist/css'
+// import 'mdbootstrap/css/mdb.css'
+// import 'mdbootstrap/css/bootstrap.css'
+// import 'mdbootstrap/css/style.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>      
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/items' element={<ItemsPage />} />         
+          <Route path='/cart' element={<CartPage />} />         
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
